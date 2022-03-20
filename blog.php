@@ -1,86 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Blog | Agency Perfect</title>
-
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-
-    <!-- Mobile Specific Metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <!-- Favicon
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
-
-    <!-- Stylesheets
-    ================================================== -->
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-<body>
-
-    <header id="masthead" class="site-header site-header-white">
-        <nav id="primary-navigation" class="site-navigation">
-            <div class="container">
-
-                <div class="navbar-header">
-                   
-                    <a href="index.html" class="site-title"><span>Agency</span>Perfect</a>
-
-                </div><!-- /.navbar-header -->
-
-                <div class="collapse navbar-collapse" id="agency-navbar-collapse">
-
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <li><a href="index.html">Home</a></li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<i class="fa fa-caret-down hidden-xs" aria-hidden="true"></i></a>
-
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                              <li><a href="portfolio.html">Portfolio</a></li>
-                              <li><a href="blog.html">Blog</a></li>
-                            </ul>
-
-                        </li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="active"><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="ui-elements.html">UI Elements</a></li>
-                    
-                    </ul>
-
-                </div>
-
-            </div>   
-        </nav><!-- /.site-navigation -->
-    </header><!-- /#mastheaed -->
-
+<?php
+include 'components/header.php';
+?>
     <div id="hero" class="hero overlay subpage-hero blog-hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -100,14 +22,14 @@
                 <div class="row">
                     <div class="col-md-8">
                         <article class="blog-post">
-                            <a href="blog-post.html">
+                            <a href="blog-post.php">
                                 <img src="assets/img/portfolio-1.jpg" class="img-res" alt="">
                             </a>
                             <div class="post-content">
-                                <h3 class="post-title"><a href="blog-post.html">12 Essential Free Sketch Plugins</a></h3>
+                                <h3 class="post-title"><a href="blog-post.php">12 Essential Free Sketch Plugins</a></h3>
                                 <p>Sketch Measure helps designers organize and outline their work for developers, project managers, and other team members</p>
                                 <div class="text-right">
-                                    <a class="read-more" href="blog-post.html">Read more</a>
+                                    <a class="read-more" href="blog-post.php">Read more</a>
                                 </div>
                                 <div class="post-meta">
                                     <span class="post-author">
@@ -119,18 +41,21 @@
                                     <span class="post-category">
                                         <a href=""><i class="fa fa-folder" aria-hidden="true"></i>Web Design</a>
                                     </span>
+                                    <span class="post-share">
+                                        <a href=""><i class="fa-solid fa-share"></i></a>
+                                    </span>
                                 </div><!-- /.post-meta -->
                             </div><!-- /.post-content -->
                         </article><!-- /.blog-post -->
                         <article class="blog-post">
-                            <a href="blog-post.html">
+                            <a href="blog-post.php">
                                 <img src="assets/img/portfolio-2.jpg" class="img-res" alt="">
                             </a>
                             <div class="post-content">
-                                <h3 class="post-title"><a href="blog-post.html">Customize WordPress Themes Easily</a></h3>
+                                <h3 class="post-title"><a href="blog-post.php">Customize WordPress Themes Easily</a></h3>
                                 <p>This guide is intended for those with some knowledge of HTML and CSS, but aren’t too familiar with the way WordPress themes work. If you don’t know much about web design but you are interested, that’s good too. We’ll explain everything each step of the way.</p>
                                 <div class="text-right">
-                                    <a class="read-more" href="blog-post.html">Read more</a>
+                                    <a class="read-more" href="blog-post.php">Read more</a>
                                 </div>
                                 <div class="post-meta">
                                     <span class="post-author">
@@ -146,14 +71,14 @@
                             </div><!-- /.post-content -->
                         </article><!-- /.blog-post -->
                         <article class="blog-post">
-                            <a href="blog-post.html">
+                            <a href="blog-post.php">
                                 <img src="assets/img/portfolio-3.jpg" class="img-res" alt="">
                             </a>
                             <div class="post-content">
-                                <h3 class="post-title"><a href="blog-post.html">Creative Website Template PSD</a></h3>
+                                <h3 class="post-title"><a href="blog-post.php">Creative Website Template PSD</a></h3>
                                 <p>Free PSD web templates can be found everywhere on the internet. Most of them are ugly, some of them look nice, but rarely will you find anything great. Since Adobe Photoshop is one of those „easy to use – hard to master“ programs, many beginners and professionals decide to use PSD templates for their first website.</p>
                                 <div class="text-right">
-                                    <a class="read-more" href="blog-post.html">Read more</a>
+                                    <a class="read-more" href="blog-post.php">Read more</a>
                                 </div>
                                 <div class="post-meta">
                                     <span class="post-author">
@@ -255,10 +180,10 @@
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <h3>Featured links</h3>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="blog.html">Blog</a></li>
-                        <li><a href="portfolio.html">Porfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li class="active"><a href="blog.php">Blog</a></li>
+                        <li><a href="portfolio.php">Porfolio</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
             </div>
