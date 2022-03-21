@@ -8,14 +8,14 @@
 
     <title>Blogify</title>
 
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+<!--    <meta name="description" content="">-->
+<!--    <meta name="author" content="">-->
+<!--    <meta name="keywords" content="">-->
 
     <!-- Mobile Specific Metas
     ================================================== -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+<!--    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">-->
+<!--    <meta name="apple-mobile-web-app-capable" content="yes">-->
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">

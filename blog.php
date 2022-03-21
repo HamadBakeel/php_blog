@@ -31,14 +31,12 @@
                         <article class="blog-post">
                             <?php for($i=0 ; $i<count($blogs) ; $i++){?>
                             <a href="blog-post.php">
-<!--                                <img src="assets/img/portfolio-1.jpg" class="img-res" alt="">-->
                                 <?php $x = $blogs[$i]['blog_image'];
                                     echo "<img src=\"assets/img/$x\"  class='img-res'>";
                                 ?>
                             </a>
                             <div class="post-content">
                                 <h3 class="post-title"><a href="blog-post.php"><?php echo $blogs[$i]['title'] ?></a></h3>
-<!--                                <p>Sketch Measure helps designers organize and outline their work for developers, project managers, and other team members</p>-->
                                     <p><?php echo $blogs[$i]['content'] ?></p>
                                 <div class="text-right">
                                     <a class="read-more" href="blog-post.php?blog=<?php echo $blogs[$i]['id'] ?>">Read more</a>
@@ -66,54 +64,6 @@
                         </article>
                         <?php }?>
 
-                        <!-- /.blog-post -->
-<!--                        <article class="blog-post">
-                            <a href="blog-post.php">
-                                <img src="assets/img/portfolio-2.jpg" class="img-res" alt="">
-                            </a>
-                            <div class="post-content">
-                                <h3 class="post-title"><a href="blog-post.php">Customize WordPress Themes Easily</a></h3>
-                                <p>This guide is intended for those with some knowledge of HTML and CSS, but aren’t too familiar with the way WordPress themes work. If you don’t know much about web design but you are interested, that’s good too. We’ll explain everything each step of the way.</p>
-                                <div class="text-right">
-                                    <a class="read-more" href="blog-post.php">Read more</a>
-                                </div>
-                                <div class="post-meta">
-                                    <span class="post-author">
-                                        <a href="#"><img class="img-res" src="assets/img/author-3.jpg" alt="">Marc Jones</a>
-                                    </span>
-                                    <span class="post-date">
-                                        <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>August 25, 2016</a>
-                                        </span>
-                                    <span class="post-category">
-                                        <a href=""><i class="fa fa-folder" aria-hidden="true"></i>Web Development</a>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="blog-post">
-                            <a href="blog-post.php">
-                                <img src="assets/img/portfolio-3.jpg" class="img-res" alt="">
-                            </a>
-                            <div class="post-content">
-                                <h3 class="post-title"><a href="blog-post.php">Creative Website Template PSD</a></h3>
-                                <p>Free PSD web templates can be found everywhere on the internet. Most of them are ugly, some of them look nice, but rarely will you find anything great. Since Adobe Photoshop is one of those „easy to use – hard to master“ programs, many beginners and professionals decide to use PSD templates for their first website.</p>
-                                <div class="text-right">
-                                    <a class="read-more" href="blog-post.php">Read more</a>
-                                </div>
-                                <div class="post-meta">
-                                    <span class="post-author">
-                                        <a href="#"><img class="img-res" src="assets/img/author-2.jpg" alt="">Linda Smith</a>
-                                    </span>
-                                    <span class="post-date">
-                                        <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>July 11, 2016</a>
-                                        </span>
-                                    <span class="post-category">
-                                        <a href=""><i class="fa fa-folder" aria-hidden="true"></i>PSD Template</a>
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
--->
                         <div class="ui-pagination mt-50">
                             <div class="row">
                                 <div class="col-md-12 text-center">
