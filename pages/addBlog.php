@@ -40,7 +40,6 @@ if(isset($_POST['addBlog'])){
 <body>
     <nav class="w-100">
         <a href="blogs.php" class="btn btn-outline-dark mx-auto">Blogs</a>
-        <a href="admin.php" class="btn btn-outline-dark mx-auto">Admin</a>
     </nav>
     <div class="container mt-0 w-50 mb-5">
         <form action="addBlog.php" method="post">

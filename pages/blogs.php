@@ -5,6 +5,10 @@ $qb = new QueryBuilder();
 
 $blogs = $qb->select("*","blog")->runQuery();
 $categories = $qb->select("*","category");
+
+if(isset($_POST['deleteBlog'])){
+    $qb->delete("blog","id=".$_POST['blogId'])->runQuery();
+}
 ?>
 
 
@@ -12,11 +16,12 @@ $categories = $qb->select("*","category");
 <head>
     <meta charset="UTF-8">
     <title>Blogs</title>
-    <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/blog.png">
 
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
 
 </head>
 <body>
@@ -57,11 +62,15 @@ $categories = $qb->select("*","category");
                                             ?>
                                         </a>
                                     </span>
-                                    <span class="post-share">
-                                        <a href=""><i class="fa-solid fa-share"></i></a>
-                                    </span>
-                                    <span>
-
+<!--                                    <span class="post-share">-->
+<!--                                        <a href=""><i class="fa-solid fa-share"></i></a>-->
+<!--                                    </span>-->
+                                    <span class="d-flex justify-content-end">
+                                        <form method="post" action="blogs.php">
+                                            <input type="hidden" value="<?php echo $blogs[$i]['id']?>" name="blogId">
+                                            <button type="submit" name="updateBlog" class="btn btn-outline-info mt-3">Update</button>
+                                            <button type="submit" name="deleteBlog" class="btn btn-outline-danger mt-3">Delete</button>
+                                        </form>
                                     </span>
                                 </div>
                             </div>
