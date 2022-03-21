@@ -10,16 +10,23 @@ if(isset($_POST['addBlog'])){
     $category_id = $_POST['categoryId'];
     $author = $_POST['blogAuthor'];
     $image = $_POST['blogImage'];
-//    $createdAt =
-    $columns = array('title','content','category_id','author','image');
-    $values = array("\"$title\"","\"$content\"",$category_id,"\"$author\"","\"$author\"");
-    $qb->insert("blog",$columns,$values)->runQuery();
+    $authorImage = $_POST['authorImage'];
 
+    $columns = array('title','content','category_id','author','blog_image','author_image');
+    $values = array("\"$title\"","\"$content\"",$category_id,"\"$author\"","\"$image\"","\"$authorImage\"");
+    $qb->insert("blog",$columns,$values)->runQuery();
+    echo "
+    <div class=\"alert alert-success d-flex align-items-center w-25 m-auto mt-5 \" role=\"alert\"><i class='fa-solid alert-warning'></i><div>
+        Blog added successfully!
+      </div>
+    </div>
+    ";
 }
 ?>
+<!--    <script>window.location=\"addBlog.php\"</script>-->
 
 
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -31,12 +38,13 @@ if(isset($_POST['addBlog'])){
 
 </head>
 <body>
-    <nav>
-
+    <nav class="w-100">
+        <a href="blogs.php" class="btn btn-outline-dark mx-auto">Blogs</a>
+        <a href="admin.php" class="btn btn-outline-dark mx-auto">Admin</a>
     </nav>
-    <div class="container mt-2 w-50 mb-5">
+    <div class="container mt-0 w-50 mb-5">
         <form action="addBlog.php" method="post">
-            <div class="mt-3">
+            <div>
                 <label for="blogTitle" class="form-label"> Blog Title</label>
                 <input required class="form-control" type="text" name="blogTitle">
             </div>
@@ -45,13 +53,11 @@ if(isset($_POST['addBlog'])){
                 <textarea required class="form-control" name="blogContent"></textarea>
             </div>
             <div class="mt-3">
-                <label for="blogDate" class="form-label">Blog Category</label>
+                <label class="form-label">Blog Category</label>
                 <select class="form-control" name="categoryId">
                     <?php for ($i=0 ; $i<count($categories) ; $i++){?>
                     <option value="<?php echo $categories[0]['id'] ?>"><?php echo $categories[$i]['category_name'] ?></option>;
                     <?php }?>
-
-
                 </select>
             </div>
             <div class="mt-3">
@@ -61,6 +67,10 @@ if(isset($_POST['addBlog'])){
             <div class="mt-3">
                 <label for="blogImage" class="form-label">Blog Image</label>
                 <input required class="form-control" type="file" name="blogImage">
+            </div>
+            <div class="mt-3">
+                <label for="authorImage" class="form-label">Author Image</label>
+                <input required class="form-control" type="file" name="authorImage">
             </div>
             <button class="btn btn-info mt-3" type="submit" name="addBlog">Add</button>
         </form>

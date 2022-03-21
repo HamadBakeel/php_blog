@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include 'components/header.php';
+    include 'components/header.php';
+    include 'classes/QueryBuilder.php';
+
+    $qb = new QueryBuilder();
+
+    $blogs = $qb->select("*","blog")->runQuery();
+    $categories = $qb->select("*","category");
+//    echo "<pre>";
+//    print_r($blogs)
 ?>
     <div id="hero" class="hero overlay subpage-hero blog-hero">
         <div class="hero-content">
@@ -16,38 +24,50 @@ include 'components/header.php';
     </div><!-- /.hero -->
 
     <main id="main" class="site-main">
-
         <section class="site-section subpage-site-section section-blog">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
                         <article class="blog-post">
+                            <?php for($i=0 ; $i<count($blogs) ; $i++){?>
                             <a href="blog-post.php">
-                                <img src="assets/img/portfolio-1.jpg" class="img-res" alt="">
+<!--                                <img src="assets/img/portfolio-1.jpg" class="img-res" alt="">-->
+                                <?php $x = $blogs[$i]['blog_image'];
+                                    echo "<img src=\"assets/img/$x\"  class='img-res'>";
+                                ?>
                             </a>
                             <div class="post-content">
-                                <h3 class="post-title"><a href="blog-post.php">12 Essential Free Sketch Plugins</a></h3>
-                                <p>Sketch Measure helps designers organize and outline their work for developers, project managers, and other team members</p>
+                                <h3 class="post-title"><a href="blog-post.php"><?php echo $blogs[$i]['title'] ?></a></h3>
+<!--                                <p>Sketch Measure helps designers organize and outline their work for developers, project managers, and other team members</p>-->
+                                    <p><?php echo $blogs[$i]['content'] ?></p>
                                 <div class="text-right">
-                                    <a class="read-more" href="blog-post.php">Read more</a>
+                                    <a class="read-more" href="blog-post.php?blog=<?php echo $blogs[$i]['id'] ?>">Read more</a>
                                 </div>
                                 <div class="post-meta">
                                     <span class="post-author">
-                                        <a href="#"><img class="img-res" src="assets/img/author.jpg" alt="">John Smith</a>
+                                        <a href="#"><img class="img-res" src="assets/img/<?php echo $blogs[$i]['author_image'] ?>" alt=""><?php echo $blogs[$i]['author'] ?></a>
                                     </span>
                                     <span class="post-date">
-                                        <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>September 21, 2016</a>
+                                        <a href=""><i class="fa fa-calendar" aria-hidden="true"></i><?php echo $blogs[$i]['creation_date'] ?></a>
                                         </span>
                                     <span class="post-category">
-                                        <a href=""><i class="fa fa-folder" aria-hidden="true"></i>Web Design</a>
+                                        <a href=""><i class="fa fa-folder" aria-hidden="true"></i><?php
+                                            $id = $blogs[$i]['category_id'];
+                                            $category = $qb->select("category_name","category","id = $id ")->runQuery();
+                                            echo $category[0]['category_name'];
+                                            ?>
+                                        </a>
                                     </span>
                                     <span class="post-share">
                                         <a href=""><i class="fa-solid fa-share"></i></a>
                                     </span>
-                                </div><!-- /.post-meta -->
-                            </div><!-- /.post-content -->
-                        </article><!-- /.blog-post -->
-                        <article class="blog-post">
+                                </div>
+                            </div>
+                        </article>
+                        <?php }?>
+
+                        <!-- /.blog-post -->
+<!--                        <article class="blog-post">
                             <a href="blog-post.php">
                                 <img src="assets/img/portfolio-2.jpg" class="img-res" alt="">
                             </a>
@@ -67,9 +87,9 @@ include 'components/header.php';
                                     <span class="post-category">
                                         <a href=""><i class="fa fa-folder" aria-hidden="true"></i>Web Development</a>
                                     </span>
-                                </div><!-- /.post-meta -->
-                            </div><!-- /.post-content -->
-                        </article><!-- /.blog-post -->
+                                </div>
+                            </div>
+                        </article>
                         <article class="blog-post">
                             <a href="blog-post.php">
                                 <img src="assets/img/portfolio-3.jpg" class="img-res" alt="">
@@ -90,10 +110,10 @@ include 'components/header.php';
                                     <span class="post-category">
                                         <a href=""><i class="fa fa-folder" aria-hidden="true"></i>PSD Template</a>
                                     </span>
-                                </div><!-- /.post-meta -->
-                            </div><!-- /.post-content -->
-                        </article><!-- /.blog-post -->
-
+                                </div>
+                            </div>
+                        </article>
+-->
                         <div class="ui-pagination mt-50">
                             <div class="row">
                                 <div class="col-md-12 text-center">

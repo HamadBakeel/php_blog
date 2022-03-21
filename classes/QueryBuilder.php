@@ -20,6 +20,7 @@ class QueryBuilder
     public function select($columns = "*",$table,$condition = null){
         if($condition != null)$this->finalQuery="SELECT ".$columns." FROM ".$table." WHERE $condition";
         else $this->finalQuery="SELECT ".$columns." FROM ".$table;
+//        echo $this->finalQuery;
         return $this;
     }
 
