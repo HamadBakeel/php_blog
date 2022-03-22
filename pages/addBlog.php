@@ -1,5 +1,8 @@
 <?php
 include ('../classes/QueryBuilder.php');
+session_start();
+if(isset($_SESSION['user'])){
+
 $qb = new QueryBuilder();
 
 $categories = $qb->select("*","category")->runQuery();
@@ -22,6 +25,10 @@ if(isset($_POST['addBlog'])){
     </div>
     ";
 }
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("Location: ../login.php");
+    }
 ?>
 <!--    <script>window.location=\"addBlog.php\"</script>-->
 
@@ -39,6 +46,9 @@ if(isset($_POST['addBlog'])){
 </head>
 <body>
     <nav class="w-100">
+        <form method="post">
+            <button class="btn btn-outline-danger" name="logout">Logout</button>
+        </form>
         <a href="blogs.php" class="btn btn-outline-dark mx-auto">Blogs</a>
     </nav>
     <div class="container mt-0 w-50 mb-5">
@@ -76,3 +86,8 @@ if(isset($_POST['addBlog'])){
     </div>
 </body>
 </html>
+    <?php
+}
+else{
+    header("location: ../login.php");
+}

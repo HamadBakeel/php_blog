@@ -11,6 +11,8 @@ class QueryBuilder
     /**
      * @param $pdo
      */
+
+
     public function __construct()
     {
         $this->pdo = new PDO($this->dsn,$this->username,$this->pass);
@@ -35,13 +37,14 @@ class QueryBuilder
                 $this->finalQuery .= $pair;
             }
             $this->finalQuery.=" WHERE ".$condition;
-            echo $this->finalQuery;
+//            echo $this->finalQuery;
         }
         return $this;
     }
 
     public function delete($table,$condition){
         $this->finalQuery = "DELETE FROM $table WHERE $condition";
+//        echo $this->finalQuery;
         return $this;
     }
 
@@ -59,7 +62,7 @@ class QueryBuilder
                 if ($i == count($values) - 1) $this->finalQuery.=" $value)";
                 else $this->finalQuery.="$value, ";
             }
-                $this->finalQuery;
+//                $this->finalQuery;
         }
         return $this;
     }

@@ -8,8 +8,7 @@
 
     $blogs = $qb->select("*","blog")->runQuery();
     $categories = $qb->select("*","category");
-//    echo "<pre>";
-//    print_r($blogs)
+
 ?>
     <div id="hero" class="hero overlay subpage-hero blog-hero">
         <div class="hero-content">
@@ -28,8 +27,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <article class="blog-post">
-                            <?php for($i=0 ; $i<count($blogs) ; $i++){?>
+                        <?php for($i=0 ; $i<count($blogs) ; $i++){?>
+                        <article class="blog-post "
+                                 style="
+                                    border: 1px solid #ccc;
+                                    border-radius: 3px;
+                                    padding: 7px;
+                                    margin-bottom: 15px;
+                            ">
                             <a href="blog-post.php">
                                 <?php $x = $blogs[$i]['blog_image'];
                                     echo "<img src=\"assets/img/$x\"  class='img-res'>";
@@ -38,9 +43,7 @@
                             <div class="post-content">
                                 <h3 class="post-title"><a href="blog-post.php"><?php echo $blogs[$i]['title'] ?></a></h3>
                                     <p><?php echo $blogs[$i]['content'] ?></p>
-                                <div class="text-right">
-                                    <a class="read-more" href="blog-post.php?blog=<?php echo $blogs[$i]['id'] ?>">Read more</a>
-                                </div>
+
                                 <div class="post-meta">
                                     <span class="post-author">
                                         <a href="#"><img class="img-res" src="assets/img/<?php echo $blogs[$i]['author_image'] ?>" alt=""><?php echo $blogs[$i]['author'] ?></a>
@@ -59,6 +62,9 @@
                                     <span class="post-share">
                                         <a href=""><i class="fa-solid fa-share"></i></a>
                                     </span>
+                                </div>
+                                <div class="text-right">
+                                    <a class="read-more" href="blog-post.php?blog=<?php echo $blogs[$i]['id'] ?>">Read more</a>
                                 </div>
                             </div>
                         </article>
